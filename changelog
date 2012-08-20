@@ -1,6 +1,6 @@
-turnkey-llmp-12.0 (1) turnkey; urgency=low
+turnkey-lighttpd-php-fastcgi-12.0 (1) turnkey; urgency=low
 
-  * Initial public release of TurnKey LLMP stack.
+  * Initial public release of TurnKey Lighttpd PHP FastCGI Server.
 
   * Lighttpd configured with FastCGI PHP support.
 
