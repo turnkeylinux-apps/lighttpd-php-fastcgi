@@ -1,5 +1,5 @@
-Lighttpd PHP FastCGI Configuration - with PHPMyAdmin
-====================================================
+Lighttpd PHP FastCGI Configuration - with Adminer
+=================================================
 
 `Lighttpd`_ is a web server and load balancer optimized for
 speed-critical environments products while remaining
@@ -19,7 +19,7 @@ and on top of that:
 - TurnKey Web Control panel with links to useful references and
   resources.
 - SSL support out of the box.
-- `PHPMyAdmin`_ administration frontend for MySQL (listening on port
+- `Adminer`_ administration frontend for MySQL (listening on port
   12322 - uses SSL).
 - Postfix MTA (bound to localhost) to allow sending of email (e.g.,
   password recovery).
@@ -33,4 +33,4 @@ Credentials *(passwords set at first boot)*
 
 .. _Lighttpd: http://www.lighttpd.net
 .. _TurnKey Core: http://www.turnkeylinux.org/core
-.. _PHPMyAdmin: http://www.phpmyadmin.net
+.. _Adminer: http://www.adminer.org
