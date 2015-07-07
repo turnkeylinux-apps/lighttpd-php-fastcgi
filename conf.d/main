@@ -1,13 +1,7 @@
 #!/bin/sh -ex
 
-# enable fastcgi modules
-#lighty-enable-mod fastcgi
-#lighty-enable-mod fastcgi-php
-#lighty-disable-mod ssl
-
 # enable webroot
 lighty-enable-mod webroot
 
 # cleanup
 rm -rf /var/www/html
-
