@@ -1,14 +1,7 @@
 #!/bin/sh -ex
 
-# enable fastcgi modules
-lighty-enable-mod fastcgi
-lighty-enable-mod fastcgi-php
-lighty-disable-mod ssl
-
-# enable webroot/phpmyadmin
+# enable webroot
 lighty-enable-mod webroot
-lighty-enable-mod phpmyadmin
 
 # cleanup
-rm -f /var/www/index.lighttpd.html
-
+rm -rf /var/www/html
