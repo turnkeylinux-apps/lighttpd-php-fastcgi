@@ -2,8 +2,6 @@ turnkey-lighttpd-php-fastcgi-14.0 (1) turnkey; urgency=low
 
   * Latest Debian Jessie package versions of all components.
 
-  * Adminer replaces phpMyAdmin for MySQL DB administration.
-
   * Replaced PHPMyAdmin with Adminer
 
   * Hardened default SSL settings
