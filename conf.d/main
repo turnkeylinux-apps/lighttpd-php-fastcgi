@@ -3,5 +3,3 @@
 # enable webroot
 lighty-enable-mod webroot
 
-# cleanup
-rm -rf /var/www/html
