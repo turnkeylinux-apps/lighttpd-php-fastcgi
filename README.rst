@@ -32,5 +32,5 @@ Credentials *(passwords set at first boot)*
 
 
 .. _Lighttpd: http://www.lighttpd.net
-.. _TurnKey Core: http://www.turnkeylinux.org/core
+.. _TurnKey Core: https://www.turnkeylinux.org/core
 .. _Adminer: http://www.adminer.org
