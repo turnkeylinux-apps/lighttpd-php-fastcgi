@@ -12,3 +12,5 @@ webmin-phpini
 mysql-server
 webmin-mysql
 adminer
+
+libperl4-corelibs-perl # php5-common depends on lsof; which depends on this
