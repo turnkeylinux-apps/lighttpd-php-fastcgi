@@ -1,9 +1,22 @@
+turnkey-lighttpd-php-fastcgi-14.2 (1) turnkey; urgency=low
+
+  * Updated Adminer to 4.2.5
+
+  * Removed php-xcache (opcache enabled by default in php).
+
+  * Installed security updates.
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Wed, 19 Apr 2017 10:43:09 +1000
+
 turnkey-lighttpd-php-fastcgi-14.1 (1) turnkey; urgency=low
 
   * Fix LigHTTPd bug in 15regen-sllcert (#512).
 
   * Note: Please refer to turnkey-core's changelog for changes common to all
-    appliances. Here we only describe changes specific to this appliance.i
+    appliances. Here we only describe changes specific to this appliance.
 
  -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 18 Feb 2016 15:19:03 +1100
 

@@ -7,9 +7,10 @@ php5-cli
 php5-cgi
 php5-curl
 php5-mysql
-php5-xcache
 webmin-phpini
 
 mysql-server
 webmin-mysql
 adminer
+
+libperl4-corelibs-perl # php5-common depends on lsof; which depends on this
