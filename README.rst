@@ -16,6 +16,7 @@ and on top of that:
    - All components installed and maintaiend through the package
      management system.
 
+- MariaDB (drop-in MySQL replacement).
 - TurnKey Web Control panel with links to useful references and
   resources.
 - SSL support out of the box.
@@ -28,8 +29,8 @@ and on top of that:
 Credentials *(passwords set at first boot)*
 -------------------------------------------
 
--  Webmin, SSH, MySQL, Adminer: username **root**
-
+-  Webmin, SSH, MySQL: username **root**
+-  Adminer: username **adminer**
 
 .. _Lighttpd: http://www.lighttpd.net
 .. _TurnKey Core: https://www.turnkeylinux.org/core
