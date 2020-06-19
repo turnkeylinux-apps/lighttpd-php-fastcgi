@@ -1,4 +1,5 @@
 #include <turnkey/base>
+#include <turnkey/mysql>
 
 lighttpd
 
@@ -9,8 +10,6 @@ php-curl
 php-mysql
 webmin-phpini
 
-default-mysql-server
-webmin-mysql
 adminer
 
 libperl4-corelibs-perl # php5-common depends on lsof; which depends on this
