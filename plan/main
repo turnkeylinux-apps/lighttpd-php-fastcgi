@@ -1,15 +1,2 @@
 #include <turnkey/base>
-#include <turnkey/mysql>
-
-lighttpd
-
-php-gd
-php-cli
-php-cgi
-php-curl
-php-mysql
-webmin-phpini
-
-adminer
-
-libperl4-corelibs-perl # php5-common depends on lsof; which depends on this
+#include <turnkey/lighttpd-php-fpm-mysql>
