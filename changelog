@@ -1,3 +1,31 @@
+turnkey-lighttpd-php-fastcgi-17.0 (1) turnkey; urgency=low
+
+  * Updated all relevant Debian packages to Bullseye/11 versions; including
+    PHP 7.4.
+
+  * Provide predefined dh_params (via 'turnkey-make-ssl-cert' where relevant)
+    as per RFC7919 - part of #1653.
+
+  * Use default Debian PHP-FPM config (previously we supplied our own
+    custom fastcgi service and setup).
+
+  * Configure OCSP stapling (will only work once a valid cert is configured).
+
+  * Enable HSTS by default (only effects HTTPS traffic - full implementation
+    also requires HTTP redirect to HTTPS and valid cert).
+
+  * Updated version of mysqltuner script.
+
+  * Reorgnaise/refactor build code so there is now a dedicated
+    lighttpd-php-mysql.mk and plan files. Generic/shared Lighttpd related
+    build code now resides in common. (Development - should have no end user
+    impact).
+
+  * Note: Please refer to turnkey-core's changelog for changes common to all
+    appliances. Here we only describe changes specific to this appliance.
+
+ -- Jeremy Davis <jeremy@turnkeylinux.org>  Thu, 14 Apr 2022 10:01:43 +1000
+
 turnkey-lighttpd-php-fastcgi-16.1 (1) turnkey; urgency=low
 
   * Note: Please refer to turnkey-core's 16.1 changelog for changes common to

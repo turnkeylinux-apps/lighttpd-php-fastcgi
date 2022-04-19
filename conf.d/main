@@ -1,7 +1,4 @@
 #!/bin/sh -ex
 
 # enable webroot
-lighty-enable-mod webroot
-
-# ensure mod_openssl is loaded
-sed -i '/^server\.modules = / a"mod_openssl",' /etc/lighttpd/lighttpd.conf
+lighty-enable-mod tkl-webroot
