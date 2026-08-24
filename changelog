@@ -5,6 +5,9 @@ turnkey-lighttpd-php-fastcgi-19.0 (1) turnkey; urgency=low
   * Update Lighttpd, PHP-FPM, MariaDB and Adminer from the Debian Trixie
     repositories. PHP is served through the packaged FastCGI configuration.
 
+  * Use Debian's mysqltuner package in place of the inherited mutable upstream
+    download.
+
   * See the TurnKey Core 19.0 changelog for changes common to all appliances.
 
  -- TurnKey Linux release engineering <release@turnkeylinux.org>  Mon, 24 Aug 2026 00:00:00 +0000

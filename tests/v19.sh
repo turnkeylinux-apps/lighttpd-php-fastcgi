@@ -30,6 +30,12 @@ lighttpd_version=$(dpkg-query -W -f='${Version}' lighttpd)
 php_version=$(dpkg-query -W -f='${Version}' php-fpm)
 mariadb_version=$(dpkg-query -W -f='${Version}' mariadb-server)
 adminer_version=$(dpkg-query -W -f='${Version}' adminer)
+mysqltuner_version=$(dpkg-query -W -f='${Version}' mysqltuner)
+test "$(command -v mysqltuner)" = /usr/bin/mysqltuner
+dpkg-query -S /usr/bin/mysqltuner | grep -q '^mysqltuner:'
+test ! -e /usr/local/bin/mysqltuner
+test ! -e /usr/local/bin/basic_passwords.txt
+test ! -e /usr/local/bin/vulnerabilities.csv
 
 curl --insecure --fail --silent --show-error https://127.0.0.1/ >"$response"
 grep -q 'TurnKey Lighttpd PHP FastCGI Server' "$response"
@@ -83,25 +89,25 @@ fi
 
 dpkg-query -W webmin-mysql webmin-phpini >/dev/null
 
-before="$lighttpd_version|$php_version|$mariadb_version|$adminer_version"
+before="$lighttpd_version|$php_version|$mariadb_version|$adminer_version|$mysqltuner_version"
 apt-get update >/dev/null
-for package in lighttpd php-fpm mariadb-server adminer; do
+for package in lighttpd php-fpm mariadb-server adminer mysqltuner; do
     apt-cache policy "$package" >"$policy"
     candidate=$(awk '/Candidate:/ {print $2}' "$policy")
     test -n "$candidate"
     test "$candidate" != '(none)'
     grep -Eq 'http://deb\.debian\.org/debian trixie/main' "$policy"
 done
-after="$(dpkg-query -W -f='${Version}' lighttpd)|$(dpkg-query -W -f='${Version}' php-fpm)|$(dpkg-query -W -f='${Version}' mariadb-server)|$(dpkg-query -W -f='${Version}' adminer)"
+after="$(dpkg-query -W -f='${Version}' lighttpd)|$(dpkg-query -W -f='${Version}' php-fpm)|$(dpkg-query -W -f='${Version}' mariadb-server)|$(dpkg-query -W -f='${Version}' adminer)|$(dpkg-query -W -f='${Version}' mysqltuner)"
 test "$after" = "$before"
 grep -Rqs '^Suites: trixie' /etc/apt/sources.list.d
 ! grep -Rqi bookworm /etc/apt/sources.list.d
 
 cat >"$result" <<EOF
-package_source=Debian 13 Trixie APT repositories for Lighttpd, PHP-FPM, MariaDB and Adminer; TurnKey APT for Webmin modules
-installed_version=lighttpd $lighttpd_version; php-fpm $php_version; mariadb-server $mariadb_version; adminer $adminer_version
-runtime_checks=normal init; Lighttpd HTTPS landing and control-panel links; PHP 8.4 through FastCGI; MariaDB root login; database-backed PHP request; Adminer HTTPS and credential login; Webmin MariaDB and PHP modules
-updater_command=apt-get update; apt-cache policy lighttpd php-fpm mariadb-server adminer
+package_source=Debian 13 Trixie APT repositories for Lighttpd, PHP-FPM, MariaDB, Adminer and mysqltuner; TurnKey APT for Webmin modules
+installed_version=lighttpd $lighttpd_version; php-fpm $php_version; mariadb-server $mariadb_version; adminer $adminer_version; mysqltuner $mysqltuner_version
+runtime_checks=normal init; Lighttpd HTTPS landing and control-panel links; PHP 8.4 through FastCGI; MariaDB root login; database-backed PHP request; Adminer HTTPS and credential login; Debian-owned mysqltuner command; Webmin MariaDB and PHP modules
+updater_command=apt-get update; apt-cache policy lighttpd php-fpm mariadb-server adminer mysqltuner
 updater_result=signed metadata refreshed; eligible candidates found; installed versions unchanged
 updater_channel=Debian Trixie and TurnKey Trixie APT repositories
 integrity_evidence=APT accepted signed repository metadata through configured Deb822 sources and keyrings; no Bookworm source remained

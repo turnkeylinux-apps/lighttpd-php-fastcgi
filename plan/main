@@ -1,2 +1,4 @@
 #include <turnkey/base>
 #include <turnkey/lighttpd-php-fpm-mysql>
+
+mysqltuner
